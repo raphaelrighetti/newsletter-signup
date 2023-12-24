@@ -1,0 +1,16 @@
+.card {
+  display: flex;
+
+  width: 60%;
+  max-height: 80%;
+  margin-inline: auto;
+}
+
+.illustration {
+  width: 80%;
+  height: 80%;
+  max-width: 400px;
+  max-height: 593px;
+  min-width: 200px;
+  min-height: 296.5px;
+}
