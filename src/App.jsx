@@ -10,13 +10,13 @@ import useInputValidation from './Components/hooks/useInputValidation';
 function App() {
   const email = useInputValidation('email');
   const [mobile, setMobile] = React.useState(() => {
-    return window.matchMedia('(max-width: 500px)').matches;
+    return window.matchMedia('(max-width: 1220px)').matches;
   });
   const [cadastrado, setCadastrado] = React.useState(false);
 
   React.useEffect(() => {
     function handleResize() {
-      setMobile(window.matchMedia('(max-width: 500px)').matches);
+      setMobile(window.matchMedia('(max-width: 1220px)').matches);
     }
 
     window.addEventListener('resize', handleResize);

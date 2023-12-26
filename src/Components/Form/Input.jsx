@@ -17,7 +17,7 @@ const Input = ({ label, placeholder, value, setValue, error, validate }) => {
   }
 
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.div}>
         <label className={styles.label}>{label}</label>
         {error && <p className={styles.error}>{error}</p>}
@@ -31,7 +31,7 @@ const Input = ({ label, placeholder, value, setValue, error, validate }) => {
         onBlur={validate}
         type="text"
       />
-    </>
+    </div>
   );
 };
 

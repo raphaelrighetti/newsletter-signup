@@ -6,6 +6,7 @@
   grid-template-rows: 90% 10%;
   align-items: center;
   justify-content: center;
+  line-height: 1.25rem;
   font-family: 'Roboto', sans-serif;
   color: var(--charcoal-grey);
   background-color: var(--dark-slate-grey);
@@ -24,7 +25,7 @@
   color: hsl(228, 45%, 44%);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1220px) {
   .attribution {
     color: var(--charcoal-grey);
   }

@@ -23,8 +23,12 @@ const Form = ({ mobile, value, setValue, error, validate, setCadastrado }) => {
     <>
       <div className={styles.left}>
         <div className={styles.leftContent}>
-          <FormTitle>Stay updated!</FormTitle>
-          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+          <div className={styles.header}>
+            <FormTitle>Stay updated!</FormTitle>
+            <p className={styles.text}>
+              Join 60,000+ product managers receiving monthly updates on:
+            </p>
+          </div>
           <ul>
             <li>Product discovery and building what matters</li>
             <li>Measuring to ensure updates are a success</li>
