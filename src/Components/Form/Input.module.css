@@ -1,0 +1,31 @@
+.div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.label {
+  display: block;
+  font-weight: 700;
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  cursor: pointer;
+  border: solid 1px var(--grey);
+  border-radius: .5rem;
+  padding: 1rem;
+}
+
+.inputError {
+  color: var(--tomato);
+  border: solid 1px var(--tomato);
+  background-color: var(--tomato-light);
+}
+
+.error {
+  font-weight: 700;
+  color: var(--tomato);
+}

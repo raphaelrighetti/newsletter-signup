@@ -1,0 +1,12 @@
+.form {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(4, 25%);
+  align-items: center;
+  width: 80%;
+  height: 80%;
+}
+
+.span {
+  font-weight: 700;
+}

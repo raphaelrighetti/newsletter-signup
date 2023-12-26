@@ -1,9 +1,56 @@
-.card {
+.left,
+.right {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-block: 1rem;
+}
 
-  width: 60%;
-  max-height: 80%;
-  margin-inline: auto;
+.leftContent {
+  width: 90%;
+  height: 90%;
+  margin-left: 10%;
+  display: grid;
+  grid-template-rows: 20% 10% 30% 40%;
+  align-items: center;
+}
+
+.leftContent p {
+  font-weight: 400;
+  max-width: 365px;
+}
+
+.leftContent ul li {
+  margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+}
+
+.leftContent ul li::before {
+  content: url("../../assets/images/icon-list.svg");
+  display: inline-block;
+  margin-right: .25rem;
+}
+
+.leftContent form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.leftContent form button {
+  cursor: pointer;
+  font-weight: 700;
+  padding: 1rem;
+  color: var(--white);
+  background-color: var(--dark-slate-grey);
+  border: none;
+  border-radius: .5rem;
 }
 
 .illustration {

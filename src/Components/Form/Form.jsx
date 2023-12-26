@@ -1,31 +1,52 @@
 import React from 'react';
-import '../../variables.css';
 import styles from './Form.module.css';
 import Input from './Input';
 import IllustrationDesktop from '../SVG/IllustrationDesktop';
+import FormTitle from './FormTitle';
+import FormButton from './FormButton';
 
-const Form = () => {
-  const [email, setEmail] = React.useState('');
+const Form = ({ value, setValue, error, validate, setCadastrado }) => {
+  const formRef = React.useRef();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (validate()) {
+      setCadastrado(true);
+    } else {
+      console.log(formRef.current.children[1].focus());
+    }
+  }
 
   return (
-    <div className={styles.card}>
-      <div className="left">
-        <h1>Stay updated!</h1>
-        <p>Join 60,000+ product managers receiving monthly updates on:</p>
-        <ul>
-          <li>Product discovery and building what matters</li>
-          <li>Measuring to ensure updates are a success</li>
-          <li>And much more!</li>
-        </ul>
-        <form>
-          <Input label="Email adress" value={email} setValue={setEmail} />
-          <button>Subscribe to monthly newsletter</button>
-        </form>
+    <>
+      <div className={styles.left}>
+        <div className={styles.leftContent}>
+          <FormTitle>Stay updated!</FormTitle>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+          <ul>
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
+          <form ref={formRef} onSubmit={handleSubmit}>
+            <Input
+              label="Email adress"
+              placeholder="email@company.com"
+              value={value}
+              setValue={setValue}
+              error={error}
+              validate={validate}
+              type="email"
+            />
+            <FormButton>Subscribe to monthly newsletter</FormButton>
+          </form>
+        </div>
       </div>
-      <div className="right">
+      <div className={styles.right}>
         <IllustrationDesktop className={styles.illustration} />
       </div>
-    </div>
+    </>
   );
 };
 
