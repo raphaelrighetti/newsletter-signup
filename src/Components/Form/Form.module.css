@@ -24,9 +24,7 @@
 }
 
 .leftContent ul li {
-  margin-bottom: .5rem;
-  display: flex;
-  align-items: center;
+  margin-bottom: .75rem;
 }
 
 .leftContent ul li::before {
@@ -60,4 +58,23 @@
   max-height: 593px;
   min-width: 200px;
   min-height: 296.5px;
+}
+
+@media (max-width: 500px) {
+
+  .left,
+  .right {
+    width: 100%;
+  }
+
+  .right {
+    height: fit-content;
+    padding: 0;
+  }
+
+  .leftContent {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+  }
 }

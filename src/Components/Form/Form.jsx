@@ -2,10 +2,11 @@ import React from 'react';
 import styles from './Form.module.css';
 import Input from './Input';
 import IllustrationDesktop from '../SVG/IllustrationDesktop';
+import IllustrationMobile from '../SVG/IllustrationMobile';
 import FormTitle from './FormTitle';
 import FormButton from './FormButton';
 
-const Form = ({ value, setValue, error, validate, setCadastrado }) => {
+const Form = ({ mobile, value, setValue, error, validate, setCadastrado }) => {
   const formRef = React.useRef();
 
   function handleSubmit(e) {
@@ -44,7 +45,11 @@ const Form = ({ value, setValue, error, validate, setCadastrado }) => {
         </div>
       </div>
       <div className={styles.right}>
-        <IllustrationDesktop className={styles.illustration} />
+        {mobile ? (
+          <IllustrationMobile className={styles.illustration} />
+        ) : (
+          <IllustrationDesktop className={styles.illustration} />
+        )}
       </div>
     </>
   );

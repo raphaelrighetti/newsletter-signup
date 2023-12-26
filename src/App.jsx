@@ -9,13 +9,29 @@ import useInputValidation from './Components/hooks/useInputValidation';
 
 function App() {
   const email = useInputValidation('email');
+  const [mobile, setMobile] = React.useState(() => {
+    return window.matchMedia('(max-width: 500px)').matches;
+  });
   const [cadastrado, setCadastrado] = React.useState(false);
+
+  React.useEffect(() => {
+    function handleResize() {
+      setMobile(window.matchMedia('(max-width: 500px)').matches);
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   return (
     <>
       <Card>
         {!cadastrado ? (
           <Form
+            mobile={mobile}
             value={email.value}
             setValue={email.setValue}
             error={email.error}
